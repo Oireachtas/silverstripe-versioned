@@ -12,9 +12,18 @@ if (!interface_exists(OperationCreator::class)) {
 
 /**
  * Scaffolds a generic update operation for DataObjects.
+ *
+ * @deprecated 5.3.0 Will be moved to the silverstripe/graphql module
  */
 class UnpublishCreator extends AbstractPublishOperationCreator
 {
+    public function __construct()
+    {
+        Deprecation::withNoReplacement(function () {
+            Deprecation::notice('5.3.0', 'Will be moved to the silverstripe/graphql module', Deprecation::SCOPE_CLASS);
+        });
+    }
+
     /**
      * @param string $typeName
      * @return string
