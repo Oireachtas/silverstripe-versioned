@@ -3,6 +3,7 @@
 namespace SilverStripe\Versioned\GraphQL\Operations;
 
 use SilverStripe\GraphQL\Schema\Interfaces\OperationCreator;
+use SilverStripe\Dev\Deprecation;
 
 // GraphQL dependency is optional in versioned,
 // and the following implementation relies on existence of this class (in GraphQL v4)
