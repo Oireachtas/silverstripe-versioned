@@ -2885,7 +2885,7 @@ SQL
      */
     public static function get_all_versions($class, $id)
     {
-        FluentState::singleton()->setLocate(null);
+        FluentState::singleton()->setLocale(null);
 
         $list = DataList::create($class)
             ->filter('ID', $id)
