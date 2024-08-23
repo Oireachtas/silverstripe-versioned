@@ -27,6 +27,7 @@ use SilverStripe\Security\Member;
 use SilverStripe\Security\Permission;
 use SilverStripe\Security\Security;
 use SilverStripe\View\TemplateGlobalProvider;
+use TractorCow\Fluent\State\FluentState;
 
 /**
  * The Versioned extension allows your DataObjects to have several versions,
@@ -2884,6 +2885,8 @@ SQL
      */
     public static function get_all_versions($class, $id)
     {
+        FluentState::singleton()->setLocate(null);
+
         $list = DataList::create($class)
             ->filter('ID', $id)
             ->setDataQueryParam('Versioned.mode', 'all_versions');
